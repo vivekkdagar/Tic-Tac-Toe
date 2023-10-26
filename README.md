@@ -11,6 +11,11 @@ This game requires the `tabulate` module, which can be installed using pip:
 pip install tabulate
 ```
 
+or if You use anaconda, then using conda:
+```
+conda install tabulate
+```
+
 ### Usage
 
 To start the game, run the `Main()` constructor from the `main.py` file:
