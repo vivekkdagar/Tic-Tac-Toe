@@ -1,3 +1,4 @@
+<a href='https://github.com/vivekkdagar/Boggle-Word-Solver/blob/main/LICENSE' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/GNU_General Public License-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=black&color=black'/></a>
 # Tic Tac Toe
 > A Python Tic Tac Toe game played by two-players on a 3x3 grid. <br><br>
 ![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)
