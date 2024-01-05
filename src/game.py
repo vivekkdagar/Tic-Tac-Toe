@@ -7,7 +7,6 @@ import platform
 import time
 from os import system
 from tabulate import tabulate
-from prettytable import PrettyTable
 from statistics import Statistics
 
 def AbortGame():
@@ -18,13 +17,10 @@ class Game:
     def __init__(self):
         self.HUMAN = 'X'
         self.COMP = 'O'
-        self.board = [
-            [' ', ' ', ' '],
-            [' ', ' ', ' '],
-            [' ', ' ', ' '],
-        ]
+        self.board = [[' ' for _ in range(3)] for _ in range(3)]
         self.h_choice = ''
         self.c_choice = ''
+        self.score_card = Statistics()
     
     def wipe_board(self):
         self.board = [
@@ -162,7 +158,7 @@ class Game:
                 can_move = self.set_move(coord[0], coord[1], self.HUMAN)
 
                 if not can_move:
-                    print('Bad move')
+                    print('Occupied cell')
                     move = -1
             except (EOFError, KeyboardInterrupt):
                 print('Bye')
@@ -205,7 +201,6 @@ class Game:
         self.clean()
         self.h_choice = ''
         self.c_choice = ''
-        first = ''
 
         while self.h_choice != 'O' and self.h_choice != 'X':
             try:
@@ -257,8 +252,8 @@ class Game:
                 Statistics().update_statistics("Player 1 wins against Computer", False)
             elif mode == 'h':
                 print('PLAYER1 WINS!')
-                Statistics().update_statistics("Player 1 wins against Human", False)
-            Statistics().update_statistics('Updating total', True)          # Total
+                self.score_card.update_statistics("Player 1 wins against Human", False)
+            self.score_card.update_statistics('Updating total', True)          # Total
         elif self.wins(self.board, self.COMP):
             self.clean()
             if mode == 'c':
@@ -270,13 +265,13 @@ class Game:
                 print('YOU LOSE!')
             elif mode == 'h':
                 print('PLAYER2 WINS!')
-            Statistics().update_statistics('Updating total', True)          # Total
+            self.score_card.update_statistics('Updating total', True)          # Total
         else:
             self.clean()
             self.render()
             print('DRAW!')
-            Statistics().update_statistics('Draw', False)
-            Statistics().update_statistics('Updating total', True)          # Total
+            self.score_card.update_statistics('Draw', False)
+            self.score_card.update_statistics('Updating total', True)          # Total
         print("Going back to menu in 3 seconds")
         time.sleep(3)
         self.clean()

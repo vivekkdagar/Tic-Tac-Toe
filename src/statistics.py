@@ -7,6 +7,8 @@ Created on Mon Jan  1 00:45:33 2024
 """
 import json
 import os
+import platform
+from os import system
 from prettytable import PrettyTable
 
 class Statistics:
@@ -42,7 +44,7 @@ class Statistics:
     def update_statistics(self, result, flag):
         if flag == True:
             self.stats["total_matches"] += 1
-        if result == "Player 1 wins":
+        if "Player 1 wins" in result:
             self.stats["player_wins"] += 1
         if result == "Player 1 wins against Computer":
             self.stats["player_wins_vs_computer"] += 1
@@ -53,6 +55,7 @@ class Statistics:
         self.save_statistics()
 
     def display_statistics(self):
+        self.clean()
         table = PrettyTable()
         table.field_names = ["Statistic", "Value"]
         table.add_row(["Total Matches", self.stats["total_matches"]])
@@ -62,3 +65,11 @@ class Statistics:
         table.add_row(["Draws", self.stats["draws"]])
         print("\nPlayer Statistics:")
         print(table)
+        print("\n")
+    
+    def clean(self):
+        os_name = platform.system().lower()
+        if 'windows' in os_name:
+            system('cls')
+        else:
+            system('clear')
