@@ -1,4 +1,16 @@
 <a href='https://github.com/vivekkdagar/Boggle-Word-Solver/blob/main/LICENSE' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/GNU_General Public License-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=black&color=black'/></a>
+
+### Updates to the Tic Tac Toe Project
+> #### 1. Minimax Algorithm and Play Against Computer Mode
+>In the upcoming updates, we are introducing an enhanced gaming experience by implementing the Minimax algorithm, allowing users to play against a computer opponent. The Minimax algorithm ensures a challenging game by making the computer player choose optimal moves.
+> #### 2. Persistent Score Saving
+> To provide a more persistent and user-friendly experience, we have added a feature to save scores across sessions. Now, your game scores will be stored, and you can continue from where you left off in the next gaming session.
+> #### 3. Improved GUI
+> We understand the importance of a visually appealing and intuitive user interface. The project will be updated to include an improved graphical user interface (GUI) for a more engaging and enjoyable gaming experience.
+> #### 4. Package Distribution - .deb and .exe
+> To simplify the installation process, we will be providing Debian (.deb) packages for Linux systems and executable (.exe) files for Windows. This will make it easier for users to install and run the Tic Tac Toe game without worrying about dependencies or setup complexities.
+> Stay tuned for these exciting updates, and enjoy an even better Tic Tac Toe gaming experience! If you have any suggestions or feedback, feel free to let us know.
+
 # Tic Tac Toe
 > A Python Tic Tac Toe game played by two-players on a 3x3 grid. (Due to this project being updated, this documentation will be updated as well). <br><br>
 ![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)
