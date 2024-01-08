@@ -9,6 +9,7 @@
 > We understand the importance of a visually appealing and intuitive user interface. The project will be updated to include an improved graphical user interface (GUI) for a more engaging and enjoyable gaming experience.
 > #### 4. Package Distribution - .deb and .exe
 > To simplify the installation process, we will be providing Debian (.deb) packages for Linux systems and executable (.exe) files for Windows. This will make it easier for users to install and run the Tic Tac Toe game without worrying about dependencies or setup complexities.
+> #### 5. Working on a peer to peer connection as well: Youo'll be able to play locally on lan
 > Stay tuned for these exciting updates, and enjoy an even better Tic Tac Toe gaming experience! If you have any suggestions or feedback, feel free to let us know.
 
 # Tic Tac Toe
