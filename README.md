@@ -1,9 +1,9 @@
 <a href='https://github.com/vivekkdagar/Boggle-Word-Solver/blob/main/LICENSE' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/GNU_General Public License-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=black&color=black'/></a>
 
 ### Updates to the Tic Tac Toe Project
-> #### 1. Minimax Algorithm and Play Against Computer Mode
+> #### 1. Done Minimax Algorithm and Play Against Computer Mode
 >In the upcoming updates, we are introducing an enhanced gaming experience by implementing the Minimax algorithm, allowing users to play against a computer opponent. The Minimax algorithm ensures a challenging game by making the computer player choose optimal moves.
-> #### 2. Persistent Score Saving
+> #### 2. Done Persistent Score Saving
 > To provide a more persistent and user-friendly experience, we have added a feature to save scores across sessions. Now, your game scores will be stored, and you can continue from where you left off in the next gaming session.
 > #### 3. Improved GUI
 > We understand the importance of a visually appealing and intuitive user interface. The project will be updated to include an improved graphical user interface (GUI) for a more engaging and enjoyable gaming experience.
