@@ -5,6 +5,7 @@ from game import Game
 from prettytable import PrettyTable
 from tabulate import tabulate
 
+
 class Interface:
     def __init__(self):
         try:
@@ -14,7 +15,7 @@ class Interface:
         except KeyboardInterrupt:
             print('Bye')
             exit()
-    
+
     def start(self):
         while True:
             self.display_menu()
@@ -30,17 +31,18 @@ class Interface:
                 exit()
             else:
                 print("Invalid choice. Please enter 1, 2, or 3.")
-    
+
     def display_menu(self):
         menu = PrettyTable()
         menu.field_names = ["Choice", "Option"]
-        
+
         menu.add_row(["1.", "Play against human"])
         menu.add_row(["2.", "Play against computer"])
         menu.add_row(["3.", "Check scores"])
         menu.add_row(["4.", "Quit"])
-        
+
         print(tabulate(menu, headers=["Select an option"], tablefmt="grid"))
+
 
 if __name__ == "__main__":
     Interface()

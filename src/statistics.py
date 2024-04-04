@@ -11,18 +11,27 @@ import platform
 from os import system
 from prettytable import PrettyTable
 
+
+def get_stats_file_path():
+    if os.name == 'posix':  # Linux
+        return os.path.expanduser("~/Documents/Tic-Tac-Toe/scores.json")
+    elif os.name == 'nt':  # Windows
+        return os.path.expanduser("~\\Documents\\TicTacToe\\scores.json")
+    raise Exception()
+
+
+def clean():
+    os_name = platform.system().lower()
+    if 'windows' in os_name:
+        system('cls')
+    else:
+        system('clear')
+
+
 class Statistics:
     def __init__(self):
-        self.stats_file = self.get_stats_file_path()
+        self.stats_file = get_stats_file_path()
         self.stats = self.load_statistics()
-
-    def get_stats_file_path(self):
-        if os.name == 'posix':  # Linux
-            return os.path.expanduser("~/Documents/Tic-Tac-Toe/scores.json")
-        elif os.name == 'nt':  # Windows
-            return os.path.expanduser("~\\Documents\\TicTacToe\\scores.json")
-        else:
-            raise Exception()
 
     def load_statistics(self):
         if not os.path.exists(self.stats_file):
@@ -42,7 +51,7 @@ class Statistics:
             json.dump(self.stats, file)
 
     def update_statistics(self, result, flag):
-        if flag == True:
+        if flag:
             self.stats["total_matches"] += 1
         if "Player 1 wins" in result:
             self.stats["player_wins"] += 1
@@ -55,7 +64,7 @@ class Statistics:
         self.save_statistics()
 
     def display_statistics(self):
-        self.clean()
+        clean()
         table = PrettyTable()
         table.field_names = ["Statistic", "Value"]
         table.add_row(["Total Matches", self.stats["total_matches"]])
@@ -67,9 +76,3 @@ class Statistics:
         print(table)
         print("\n")
     
-    def clean(self):
-        os_name = platform.system().lower()
-        if 'windows' in os_name:
-            system('cls')
-        else:
-            system('clear')
