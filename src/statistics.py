@@ -42,7 +42,8 @@ class Statistics:
     def create_statistics_file(self):
         stats_directory = os.path.dirname(self.stats_file)
         os.makedirs(stats_directory, exist_ok=True)  # Create directory if it doesn't exist
-        initial_stats = {"total_matches": 0, "player_wins": 0, "player_wins_vs_computer": 0, "player_wins_vs_human": 0, "draws": 0}
+        initial_stats = {"total_matches": 0, "player_wins": 0, "player_wins_vs_computer": 0,
+                         "player_wins_vs_human": 0, "draws": 0}
         with open(self.stats_file, 'w') as file:
             json.dump(initial_stats, file)
 
